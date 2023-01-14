@@ -157,9 +157,12 @@ interface CytoscapeContainerParams {
 
         const valRel = `translate(${this._align[2]}%,${this._align[3]}%) `;
         const valAbs = `translate(${x.toFixed(2)}px,${y.toFixed(2)}px) `;
+        const wkValRel = `translate3d(${this._align[2]}%,${this._align[3]}%,0%) `;
+        const wkValAbs = `translate3d(${x.toFixed(2)}px,${y.toFixed(2)}px,0px) `;
         const val = valRel + valAbs;
+        const wkVal = wkValRel + wkValAbs;
         const stl = <any>this._node.style;
-        stl.webkitTransform = val;
+        stl.webkitTransform = wkVal;
         stl.msTransform = val;
         stl.transform = val;
       }
@@ -213,13 +216,15 @@ interface CytoscapeContainerParams {
     }
 
     updatePanZoom({pan, zoom}: { pan: { x: number, y: number }, zoom: number }) {
-      const val = `translate(${pan.x}px,${pan.y}px) scale(${zoom})`;
+      const val = `translate(${pan.x}px,${pan.y}px) translateZ(0px) scale(${zoom})`;
+      const wkVal = `translate3d(${pan.x}px,${pan.y}px,0px) scale(${zoom}))`;
       const stl = <any>this._node.style;
       const origin = "top left";
 
-      stl.webkitTransform = val;
+      stl.webkitTransform = wkVal;
       stl.msTransform = val;
       stl.transform = val;
+      stl["-webkit-tranform"] = wkVal;
       stl.webkitTransformOrigin = origin;
       stl.msTransformOrigin = origin;
       stl.transformOrigin = origin;
@@ -256,7 +261,7 @@ interface CytoscapeContainerParams {
 
       const stl = _titlesContainer.style;
       stl.position = 'absolute';
-      stl['z-index'] = 10;
+      stl['z-index'] = 10; //
       stl.width = '500px';
       stl.margin = '0px';
       stl.padding = '0px';
