@@ -76,8 +76,8 @@
             var y = position.y + this._align[1] * position.h;
             if (!prev || prev[0] !== x || prev[1] !== y) {
                 this._position = [x, y];
-                var valRel = "translate(" + this._align[2] + "%," + this._align[3] + "%) ";
-                var valAbs = "translate(" + x.toFixed(2) + "px," + y.toFixed(2) + "px) ";
+                var valRel = "translate(".concat(this._align[2], "%,").concat(this._align[3], "%) ");
+                var valAbs = "translate(".concat(x.toFixed(2), "px,").concat(y.toFixed(2), "px) ");
                 var val = valRel + valAbs;
                 var stl = this._node.style;
                 stl.webkitTransform = val;
@@ -124,7 +124,7 @@
         };
         LabelContainer.prototype.updatePanZoom = function (_a) {
             var pan = _a.pan, zoom = _a.zoom;
-            var val = "translate(" + pan.x + "px," + pan.y + "px) scale(" + zoom + ")";
+            var val = "translate(".concat(pan.x, "px,").concat(pan.y, "px) scale(").concat(zoom, ")");
             var stl = this._node.style;
             var origin = "top left";
             stl.webkitTransform = val;

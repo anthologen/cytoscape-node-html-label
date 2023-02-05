@@ -56,5 +56,10 @@
     "@types/cytoscape": {
       "optional": true
     }
+  },
+  "overrides": {
+    "chokidar": "3.5.3",
+    "glob-parent": "6.0.2",
+    "trim-newlines": "^3.0.1"
   }
 }
