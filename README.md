@@ -1,6 +1,9 @@
 cytoscape-node-html-label
 ================================================================================
 
+## About
+
+This is a [cytoscape-node-html-label](https://github.com/kaluginserg/cytoscape-node-html-label) fork with dependencies updated to address security vulnerabilities.
 
 ## Description
 
