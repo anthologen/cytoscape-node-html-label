@@ -1,5 +1,5 @@
 {
-  "name": "cytoscape-node-html-label",
+  "name": "@anthologen/cytoscape-node-html-label",
   "version": "1.2.3",
   "description": "labels for cytoscape nodes",
   "author": "Kalugin Sergey <kalugin.perm@gmail.com> (https://github.com/kaluginserg)",
