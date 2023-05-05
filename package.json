@@ -28,7 +28,7 @@
   "bugs": {
     "url": "https://github.com/kaluginserg/cytoscape-node-html-label/issues"
   },
-  "homepage": "https://github.com/anthologen/cytoscape-node-html-label/tree/updated_deps",
+  "homepage": "https://github.com/anthologen/cytoscape-node-html-label/tree/export_cy_interface",
   "devDependencies": {
     "@types/cytoscape": "^3.19.9",
     "@typescript-eslint/eslint-plugin": "^5.48.1",
